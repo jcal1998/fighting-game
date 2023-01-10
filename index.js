@@ -28,7 +28,7 @@ const shop = new Sprite({
 
 const player = new Fighter({
     position: {
-        x: 0,
+        x: 100,
         y: 0
     },
     velocity: {
@@ -94,7 +94,7 @@ const enemy = new Fighter({
     },
     color: 'blue',
     offset: {
-        x: 200,
+        x: -200,
         y: 170
     },
     imageSrc: './img/kenji/Idle.png',
