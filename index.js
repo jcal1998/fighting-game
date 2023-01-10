@@ -214,7 +214,7 @@ function animate() {
     }
 
     if (player.isAttacking && player.frameCurrent === 4) {
-        this.isAttacking = false
+        player.isAttacking = false
     }
 
     if (rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
@@ -226,9 +226,8 @@ function animate() {
         })
     }
 
-
     if (enemy.isAttacking && enemy.frameCurrent === 2) {
-        this.isAttacking = false
+        enemy.isAttacking = false
     }
 
     if (enemy.health <= 0 || player.health <= 0) {
