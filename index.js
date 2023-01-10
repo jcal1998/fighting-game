@@ -85,7 +85,7 @@ const player = new Fighter({
 
 const enemy = new Fighter({
     position: {
-        x: 400,
+        x: 800,
         y: 100
     },
     velocity: {
@@ -94,7 +94,7 @@ const enemy = new Fighter({
     },
     color: 'blue',
     offset: {
-        x: -200,
+        x: 200,
         y: 170
     },
     imageSrc: './img/kenji/Idle.png',
@@ -132,7 +132,7 @@ const enemy = new Fighter({
     },
     attackBox: {
         offset: {
-            x: 240,
+            x: -160,
             y: 50
         },
         width: 155,

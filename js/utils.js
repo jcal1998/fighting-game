@@ -1,4 +1,6 @@
 function rectangularCollision({ rectangle1, rectangle2 }) {
+    console.log(rectangle1.attackBox.position.x, '--', rectangle1.attackBox.width, '--', rectangle2.position.x, '--')
+    console.log(rectangle1.attackBox.position.y, '--', rectangle1.attackBox.height, '--', rectangle2.position.y, '--')
     return (
         rectangle1.attackBox.position.x + rectangle1.attackBox.width >= rectangle2.position.x &&
         rectangle1.attackBox.position.x <= rectangle2.position.x + rectangle2.width &&
