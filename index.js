@@ -206,6 +206,7 @@ function animate() {
 
     if (rectangularCollision({ rectangle1: player, rectangle2: enemy }) &&
         player.isAttacking && player.frameCurrent === 4) {
+        document.getElementById('attack1').play();
         enemy.takeHit()
         player.isAttacking = false
         gsap.to('#enemyHealth', {
@@ -214,11 +215,13 @@ function animate() {
     }
 
     if (player.isAttacking && player.frameCurrent === 4) {
+        document.getElementById('miss').play();
         player.isAttacking = false
     }
 
     if (rectangularCollision({ rectangle1: enemy, rectangle2: player }) &&
         enemy.isAttacking && enemy.frameCurrent === 2) {
+        document.getElementById('attack2').play();
         player.takeHit()
         enemy.isAttacking = false
         gsap.to('#playerHealth', {
@@ -227,6 +230,7 @@ function animate() {
     }
 
     if (enemy.isAttacking && enemy.frameCurrent === 2) {
+        document.getElementById('miss').play();
         enemy.isAttacking = false
     }
 
@@ -241,14 +245,17 @@ window.addEventListener('keydown', (e) => {
     if (!player.dead) {
         switch (e.key) {
             case 'd':
+                document.getElementById('foot1').play();
                 keys.d.pressed = true
                 player.lastKey = 'd'
                 break
             case 'a':
+                document.getElementById('foot1').play();
                 keys.a.pressed = true
                 player.lastKey = 'a'
                 break
             case 'w':
+                document.getElementById('jump').play();
                 player.velocity.y = -20
                 break
             case ' ':
@@ -260,14 +267,17 @@ window.addEventListener('keydown', (e) => {
     if (!enemy.dead) {
         switch (e.key) {
             case 'ArrowRight':
+                document.getElementById('foot2').play();
                 keys.ArrowRight.pressed = true
                 enemy.lastKey = 'ArrowRight'
                 break
             case 'ArrowLeft':
+                document.getElementById('foot2').play();
                 keys.ArrowLeft.pressed = true
                 enemy.lastKey = 'ArrowLeft'
                 break
             case 'ArrowUp':
+                document.getElementById('jump').play();
                 enemy.velocity.y = -20
                 break
             case 'ArrowDown':
@@ -280,18 +290,22 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('keyup', (e) => {
     switch (e.key) {
         case 'd':
+            document.getElementById('foot1').pause();
             keys.d.pressed = false
             break
         case 'a':
+            document.getElementById('foot1').pause();
             keys.a.pressed = false
             break
     }
 
     switch (e.key) {
         case 'ArrowRight':
+            document.getElementById('foot2').pause();
             keys.ArrowRight.pressed = false
             break
         case 'ArrowLeft':
+            document.getElementById('foot2').pause();
             keys.ArrowLeft.pressed = false
             break
     }
